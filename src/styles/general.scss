@@ -5,6 +5,7 @@
 
 body{
   font-family: $font-family;
+  min-height: 100vh;
   background-image: linear-gradient(
     darken($primary-color, 5%) 20%,
     $primary-color 80%

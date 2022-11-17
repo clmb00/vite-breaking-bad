@@ -29,6 +29,4 @@ select{
   width: 25%;
 }
 
-
-
 </style>
