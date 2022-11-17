@@ -17,7 +17,7 @@ export default{
       axios.get('https://www.breakingbadapi.com/api/characters')
        .then((response) => {
         store.characters = response.data;
-        console.log(store.characters)
+        store.counter = store.characters.length;
        })
        .catch((error) => {
         console.log(error)
