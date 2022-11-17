@@ -28,7 +28,7 @@ export default{
         <p>Found {{store.counter}} characters</p>
       </div>
       <div class="row results row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2 g-lg-3">
-        <CardResults v-for="char in store.characters" :key="char.char_id"  :img="char.img" :name="char.name" :category="char.category" :status="char.status"/>
+        <CardResults v-for="char in store.characters" :key="char.char_id"  :img="char.img" :name="char.name" :category="char.category" :status="char.status" :birthday="char.birthday" :nickname="char.nickname" :portrayed="char.portrayed"/>
       </div>
     </div>
   </div>

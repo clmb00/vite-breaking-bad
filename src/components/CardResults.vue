@@ -5,7 +5,15 @@ export default{
     img: String,
     name: String,
     category: String,
-    status: String
+    status: String,
+    nickname: String,
+    birthday: String,
+    portrayed: String
+  },
+  data(){
+    return{
+      frontSide: true
+    }
   }
 }
 </script>
@@ -14,13 +22,22 @@ export default{
 
 <div class="col">
 
-  <div class="my_card">
+  <div class="my_card" v-if="frontSide" @click="frontSide = !frontSide">
     <div class="img">
       <img :src="img" :alt="name">
     </div>
     <h3>{{name}}</h3>
     <p>{{category}}</p>
     <p>{{status}}</p>
+  </div>
+
+  <div class="my_card" v-else @click="frontSide = !frontSide">
+    <div class="img">
+      <img :src="img" :alt="name">
+    </div>
+    <h3>"{{nickname}}"</h3>
+    <p>Birth: {{birthday}}</p>
+    <p>Actor: {{portrayed}}</p>
   </div>
   
 </div>
@@ -35,6 +52,7 @@ export default{
     $primary-color 20%,
     darken($primary-color, 5%) 90%
   );
+  cursor: pointer;
   height: 410px;
   padding: 15px;
   text-align: center;
