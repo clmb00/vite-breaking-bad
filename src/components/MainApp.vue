@@ -16,8 +16,10 @@ export default{
 
 <main>
   
-  <SearchMain />
-  <ResultsMain />
+  <div class="container">
+    <SearchMain />
+    <ResultsMain />
+  </div>
 
 </main>
   
