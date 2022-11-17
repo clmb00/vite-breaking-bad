@@ -1,7 +1,7 @@
 <script>
 
-import SearchMain from "../components/SearchMain.vue";
-import ResultsMain from "../components/ResultsMain.vue";
+import SearchMain from "./SearchMain.vue";
+import ResultsMain from "./ResultsMain.vue";
 
 export default{
   name: 'MainApp',

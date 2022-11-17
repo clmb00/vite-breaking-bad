@@ -1,6 +1,12 @@
 <script>
+
+import CardResults from './CardResults.vue'
+
 export default{
-  name: 'ResultsMain'
+  name: 'ResultsMain',
+  components: {
+    CardResults
+  }
 }
 </script>
 
@@ -10,8 +16,8 @@ export default{
     <div class="how-many px-4 py-4">
       <p>Found 62 characters</p>
     </div>
-    <div class="results">
-      <div>card</div>
+    <div class="row results row-cols-3 row-cols-lg-5 g-2 g-lg-3">
+      <CardResults />
     </div>
   </div>
   
@@ -33,6 +39,11 @@ export default{
     font-weight: bold;
     font-size: 1.1rem;
   }
+}
+
+.results{
+  margin-top: 0px;
+  margin-inline: 8px;
 }
 
 </style>
