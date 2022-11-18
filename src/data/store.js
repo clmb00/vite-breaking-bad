@@ -3,5 +3,7 @@ import { reactive } from "vue";
 export const store = reactive ({
   characters: [],
   counter: 0,
-  isLoading: true
+  isLoading: true,
+  movieFilter: "",
+  nameFilter: ""
 })

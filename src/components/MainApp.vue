@@ -3,11 +3,23 @@
 import SearchMain from "./SearchMain.vue";
 import ResultsMain from "./ResultsMain.vue";
 
+import {store} from '../data/store'
+
 export default{
   name: 'MainApp',
   components: {
     SearchMain,
     ResultsMain
+  },
+  data(){
+    return{
+      store
+    }
+  },
+  methods:{
+    filterResults(){
+      this.$emit('filterApi');
+    }
   }
 }
 </script>
@@ -17,7 +29,7 @@ export default{
 <main>
   
   <div class="container">
-    <SearchMain />
+    <SearchMain @filterResults="filterResults"/>
     <ResultsMain />
   </div>
 

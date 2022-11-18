@@ -14,16 +14,23 @@ export default{
   },
   methods:{
     callApi(){
-      axios.get('https://www.breakingbadapi.com/api/characters')
+      axios.get('https://www.breakingbadapi.com/api/characters', {
+        params: {
+          category: store.movieFilter,
+          name: store.nameFilter
+        }
+      })
        .then((response) => {
-        store.isLoading = true;
         store.characters = response.data;
-        store.counter = store.characters.length;
         store.isLoading = false;
        })
        .catch((error) => {
         console.log(error)
        })
+    },
+    filterApi(){
+      store.isLoading = true;
+      this.callApi()
     }
   },
   mounted(){
@@ -35,7 +42,7 @@ export default{
 <template>
 
   <HeaderApp />
-  <MainApp />
+  <MainApp @filterApi="filterApi"/>
 
 </template>
 

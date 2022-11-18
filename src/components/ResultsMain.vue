@@ -15,6 +15,11 @@ export default{
     return{
       store
     }
+  },
+  computed:{
+    counter(){
+      return store.characters.length
+    }
   }
 }
 </script>
@@ -23,9 +28,9 @@ export default{
 
   <div class="box p-5 d-flex justify-content-center">
     <LoaderResults v-if="store.isLoading"/>
-    <div v-else>
+    <div v-else class="w-100">
       <div class="how-many px-4 py-4">
-        <p>Found {{store.counter}} characters</p>
+        <p>Found {{counter}} characters</p>
       </div>
       <div class="row results row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2 g-lg-3">
         <CardResults v-for="char in store.characters" :key="char.char_id"  :img="char.img" :name="char.name" :category="char.category" :status="char.status" :birthday="char.birthday" :nickname="char.nickname" :portrayed="char.portrayed"/>
